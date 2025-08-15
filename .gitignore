@@ -1,0 +1,7 @@
+/Client/node_modules
+/Backend/node_modules
+/Backend/config.env
+/Client/package-lock.json
+/Client/.env
+/Backend/package-lock.json
+/Backend/test-cloudinary.js

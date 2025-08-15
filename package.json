@@ -1,0 +1,18 @@
+{
+    "name": "bhutan-wanderluxe",
+    "main": "index.js",
+    "version": "1.0.0",
+    "description": "![Bhutan Wanderlux](https://github.com/BhutanWanderluxe/BhutanWanderLuxe)",
+    "scripts": {
+        "dev:install": "npm --prefix Client install && npm --prefix Backend install",
+        "dev": "concurrently \"npm --prefix Client run dev\" \"npm --prefix Backend run dev\"",
+        "lint": "eslint Backend/**/*.js Client/src/**/*.{js,jsx}"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "concurrently": "^8.2.0",
+        "eslint": "^8.0.0"
+    }
+}
