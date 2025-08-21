@@ -11,6 +11,8 @@ import Signup from "./components/Pages/Signup";
 import Admin from "./components/Pages/Admin";
 import Contact from "./components/User/ContactUs";
 import AboutWebsite from "./components/User/AboutWebsite";
+import CulturalInsights from "./components/User/CulturalInsights";
+import Ettiquette from "./components/User/Ettiquette";
 import CreateTour from "./components/Admin/CreateTour";
 import UpdateTours from "./components/User/UpdateTours";
 import Layout from "./components/Pages/Layout";
@@ -67,7 +69,16 @@ function App() {
             <Route path="signup" element={<Signup />} />
             <Route path="forgot-password" element={<ForgotPassword />} />
             <Route path="reset-password" element={<ResetPassword />} />
-            <Route path="/about" element={<AboutWebsite />} />
+            <Route
+              path="/about"
+              element={
+                <>
+                  <AboutWebsite />
+                  <CulturalInsights />
+                  <Ettiquette />
+                </>
+              }
+            />
             <Route path="/contact" element={<Contact />} />
             <Route path="/dashboard" element={<UserDashboard />} />
             <Route path="product/:tourId" element={<Tour />} />
