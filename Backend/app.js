@@ -72,7 +72,7 @@ app.use((req, res, next) => {
     next();
 });
 
-const ORIGIN = process.env.NODE_ENV === "development" ? "http://localhost:5173" : "https://bhutanwanderluxe.onrender.com";
+const ORIGIN = process.env.NODE_ENV === "development" ? "http://localhost:5173" : "https://bhutanwanderluxe-client.onrender.com";
 
 app.use(cors({
     origin: ORIGIN
