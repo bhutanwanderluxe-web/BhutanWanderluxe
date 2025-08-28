@@ -27,7 +27,7 @@ app.use(fileUpload({
 app.use(helmet());
 
 // Development logging
-if (process.env.NODE_ENV === "development") {
+if (process.env.NODE_ENV === "production") {
     app.use(morgan("dev"));
 }
 
@@ -72,7 +72,7 @@ app.use((req, res, next) => {
     next();
 });
 
-const ORIGIN = process.env.NODE_ENV === "development" ? "http://localhost:5173" : "https://bhutanwanderluxe-client.onrender.com";
+const ORIGIN = process.env.NODE_ENV === "production" ? "https://bhutanwanderluxe-client.onrender.com" : "http://localhost:5173";
 
 app.use(cors({
     origin: ORIGIN
