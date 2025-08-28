@@ -40,7 +40,7 @@ const Header = () => {
             <div className="container flex justify-between items-center px-10">
                 <div className="flex justify-center items gap-x-2 text-3xl text-[#32af6f]">
                     <Link to={user?.role === "user" ? "/" : "/admin"}>
-                        <i className="bi bi-back"></i> <span>NATOURS</span>
+                        <i className="bi bi-back"></i> <span>BhutanWanderluxe</span>
                     </Link>
                 </div>
 

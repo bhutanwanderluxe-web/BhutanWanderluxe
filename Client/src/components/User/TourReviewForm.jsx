@@ -13,7 +13,6 @@ const TourReviewForm = ({ tourId, onReviewSubmitted }) => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        if (!window.confirm("Are you sure you want to submit this review?")) return;
 
         if (!user) {
             setError("You must be logged in to submit a review.");

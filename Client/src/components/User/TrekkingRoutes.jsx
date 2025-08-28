@@ -10,6 +10,10 @@ import {
     FaChevronDown,
 } from "react-icons/fa";
 
+import jomolhari from "../../assets/maps/jomolhari-trek.webp";
+import drukpath from "../../assets/maps/druk-path.png";
+import phobjikha from "../../assets/maps/phobjikha-day.jpg";
+
 const ROUTES = [
     {
         name: "Druk Path Trek",
@@ -19,7 +23,7 @@ const ROUTES = [
         elevationGainM: 2200,
         bestSeason: "Mar-May • Sep-Nov",
         // Use your own optimized SVG/PNG placed under /public/assets/maps/
-        mapThumb: "/assets/maps/druk-path.svg",
+        mapThumb: drukpath,
         gpxHref: "/assets/gpx/druk-path.gpx",
         summary:
             "Classic high-altitude trek connecting Paro and Thimphu via blue pine forests, alpine lakes, and panoramic Himalayan views.",
@@ -31,7 +35,7 @@ const ROUTES = [
         distanceKm: 80,
         elevationGainM: 3500,
         bestSeason: "Apr-May • Oct",
-        mapThumb: "/assets/maps/jomolhari-short.svg",
+        mapThumb: jomolhari,
         gpxHref: "/assets/gpx/jomolhari-short.gpx",
         summary:
             "Follows the Paro Chhu valley to Jangothang with iconic views of Mt. Jomolhari, yak pastures, and fortress-like campsites.",
@@ -43,7 +47,7 @@ const ROUTES = [
         distanceKm: 12,
         elevationGainM: 300,
         bestSeason: "Oct-Feb (cranes) • Year-round",
-        mapThumb: "/assets/maps/phobjikha-day.svg",
+        mapThumb: phobjikha,
         gpxHref: "/assets/gpx/phobjikha-day.gpx",
         summary:
             "Gentle loop around glacial valley wetlands, black-necked crane habitat, and traditional farm hamlets.",

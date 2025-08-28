@@ -1,13 +1,17 @@
 import { CgProfile } from "react-icons/cg";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../AuthContext/AuthContext";
 
 const Profile = () => {
+    const { user } = useAuth();
     const navigate = useNavigate();
 
     const handleProfileClick = () => {
-        // console.log("Profile component loaded for user:", user);
-
-        navigate("/dashboard");
+        if (!user) {
+            navigate("/login");
+            return;
+        }
+        navigate("/dashboard"); //  both user and admin go here
     };
 
     return (

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Route, Routes, BrowserRouter, Navigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -28,6 +28,27 @@ import ManageReviews from "./components/Admin/ManageReviews";
 import ManageEvents from "./components/Admin/ManageEvents";
 import CreateEvent from "./components/Admin/CreateEvent";
 import UpdateEvent from "./components/Admin/UpdateEvent";
+
+// Auth context
+import { useAuth } from "./components/AuthContext/AuthContext";
+
+// Protect user-only routes
+const UserRoute = ({ children }) => {
+  const { user } = useAuth();
+  if (!user || user.role !== "user") {
+    return <Navigate to="/login" replace />;
+  }
+  return children;
+};
+
+// Protect admin-only routes
+const AdminRoute = ({ children }) => {
+  const { user } = useAuth();
+  if (!user || user.role !== "admin") {
+    return <Navigate to="/login" replace />;
+  }
+  return children;
+};
 
 function App() {
   const [theme, setTheme] = useState("light");
@@ -62,6 +83,7 @@ function App() {
           theme={theme === "dark" ? "dark" : "light"}
         />
         <Routes>
+          {/* Public + user layout */}
           <Route path="/" element={<Layout toggleTheme={toggleTheme} />}>
             <Route path="" element={<Home />} />
             <Route path="all-tours" element={<AllTours />} />
@@ -80,9 +102,27 @@ function App() {
               }
             />
             <Route path="/contact" element={<Contact />} />
-            <Route path="/dashboard" element={<UserDashboard />} />
             <Route path="product/:tourId" element={<Tour />} />
-            <Route path="admin" element={<Admin toggleTheme={toggleTheme} />}>
+
+            {/* Protected user dashboard */}
+            <Route
+              path="/dashboard"
+              element={
+                <UserRoute>
+                  <UserDashboard />
+                </UserRoute>
+              }
+            />
+
+            {/* Admin routes */}
+            <Route
+              path="admin"
+              element={
+                <AdminRoute>
+                  <Admin toggleTheme={toggleTheme} />
+                </AdminRoute>
+              }
+            >
               <Route index element={<AdminDashboard />} />
               <Route path="create-tour" element={<CreateTour />} />
               <Route path="create-event" element={<CreateEvent />} />
