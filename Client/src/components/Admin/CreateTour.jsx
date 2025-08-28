@@ -50,7 +50,7 @@ const CreateTour = () => {
             }
 
             const response = await axios.post(
-                "http://localhost:5000/api/v1/tours",
+                "https://bhutanwanderluxe.onrender.com/api/v1/tours",
                 formData,
                 config
             );

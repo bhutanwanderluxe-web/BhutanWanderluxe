@@ -32,7 +32,7 @@ const Contact = () => {
 
         try {
             await axios.post(
-                "http://localhost:5000/api/v1/users/contact/send",
+                "https://bhutanwanderluxe.onrender.com/api/v1/users/contact/send",
                 {
                     email: formData.email,
                     message: formData.message,

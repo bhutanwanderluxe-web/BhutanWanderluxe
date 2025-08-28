@@ -28,7 +28,7 @@ const TourReviewForm = ({ tourId, onReviewSubmitted }) => {
 
         try {
             await axios.post(
-                "http://localhost:5000/api/v1/reviews",
+                "https://bhutanwanderluxe.onrender.com/api/v1/reviews",
                 {
                     review,
                     rating,

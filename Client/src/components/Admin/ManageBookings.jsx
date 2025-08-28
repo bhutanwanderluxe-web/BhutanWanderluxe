@@ -35,7 +35,7 @@ const ManageBookings = () => {
 
         try {
             const config = { headers: { Authorization: `Bearer ${token}` } };
-            const { data } = await axios.get("http://localhost:5000/api/v1/bookings", config);
+            const { data } = await axios.get("https://bhutanwanderluxe.onrender.com/api/v1/bookings", config);
             setBookings(data.doc);
             localStorage.setItem(CACHE_KEY, JSON.stringify({ data: data.doc, timestamp: Date.now() }));
         } catch (error) {
@@ -49,7 +49,7 @@ const ManageBookings = () => {
         if (!window.confirm("Mark this booking as paid?")) return;
         try {
             await axios.patch(
-                `http://localhost:5000/api/v1/bookings/${id}`,
+                `https://bhutanwanderluxe.onrender.com/api/v1/bookings/${id}`,
                 { paid: true, status: "booked" },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -63,7 +63,7 @@ const ManageBookings = () => {
     const cancelBooking = async (id) => {
         try {
             await axios.patch(
-                `http://localhost:5000/api/v1/bookings/${id}`,
+                `https://bhutanwanderluxe.onrender.com/api/v1/bookings/${id}`,
                 { status: "cancelled" },
                 { headers: { Authorization: `Bearer ${token}` } }
             );
@@ -77,7 +77,7 @@ const ManageBookings = () => {
     const handleDelete = async (id) => {
         if (!window.confirm("Delete this cancelled booking?")) return;
         try {
-            await axios.delete(`http://localhost:5000/api/v1/bookings/${id}`, {
+            await axios.delete(`https://bhutanwanderluxe.onrender.com/api/v1/bookings/${id}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             toast.success("Booking deleted!");

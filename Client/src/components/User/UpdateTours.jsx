@@ -59,7 +59,7 @@ const UpdateTours = () => {
             };
 
             const response = await axios.patch(
-                `http://localhost:5000/api/v1/tours/${tourId}`,
+                `https://bhutanwanderluxe.onrender.com/api/v1/tours/${tourId}`,
                 formData,
                 config
             );

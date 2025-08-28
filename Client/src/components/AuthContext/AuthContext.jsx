@@ -39,7 +39,7 @@ export const AuthProvider = ({ children }) => {
 
     // 🔹 ADD THIS FUNCTION
     const signup = async ({ name, email, password, passwordConfirm }) => {
-        const res = await axios.post("http://localhost:5000/api/v1/users/signup", {
+        const res = await axios.post("https://bhutanwanderluxe.onrender.com/api/v1/users/signup", {
             name,
             email,
             password,

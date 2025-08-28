@@ -32,7 +32,7 @@ const ResetPassword = () => {
         try {
             setLoading(true);
             const response = await axios.patch(
-                'http://localhost:5000/api/v1/users/resetPasswordAfterVerify',
+                'https://bhutanwanderluxe.onrender.com/api/v1/users/resetPasswordAfterVerify',
                 {
                     email,
                     password,

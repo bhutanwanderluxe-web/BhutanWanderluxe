@@ -24,7 +24,7 @@ const ForgotPassword = () => {
         try {
             setLoading(true);
             await axios.post(
-                'http://localhost:5000/api/v1/users/forgotPassword',
+                'https://bhutanwanderluxe.onrender.com/api/v1/users/forgotPassword',
                 { email },
                 { headers: { 'Content-Type': 'application/json' } }
             );
@@ -44,7 +44,7 @@ const ForgotPassword = () => {
         try {
             setLoading(true);
             const res = await axios.post(
-                'http://localhost:5000/api/v1/users/verifyOTP',
+                'https://bhutanwanderluxe.onrender.com/api/v1/users/verifyOTP',
                 { email, otp },
                 { headers: { 'Content-Type': 'application/json' } }
             );

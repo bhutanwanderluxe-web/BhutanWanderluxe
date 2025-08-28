@@ -44,7 +44,7 @@ export const UserProvider = ({ children }) => {
                 : {};
 
             const response = await axios.get(
-                `http://localhost:5000/api/v1/tours?page=${page}&limit=${limit}`,
+                `https://bhutanwanderluxe.onrender.com/api/v1/tours?page=${page}&limit=${limit}`,
                 config
             );
             console.log("API response:", response.data);

@@ -56,7 +56,7 @@ const UpdateEvent = () => {
             };
 
             await axios.patch(
-                `http://localhost:5000/api/v1/events/${eventData._id}`,
+                `https://bhutanwanderluxe.onrender.com/api/v1/events/${eventData._id}`,
                 formData,
                 config
             );

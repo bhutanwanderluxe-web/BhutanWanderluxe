@@ -50,7 +50,7 @@ const ManageReviews = () => {
         }
 
         try {
-            const { data } = await axios.get("http://localhost:5000/api/v1/reviews", {
+            const { data } = await axios.get("https://bhutanwanderluxe.onrender.com/api/v1/reviews", {
                 headers: { Authorization: `Bearer ${token}` },
             });
 
@@ -74,7 +74,7 @@ const ManageReviews = () => {
         const reviewId = deleteTarget._id;
 
         try {
-            await axios.delete(`http://localhost:5000/api/v1/reviews/${reviewId}`, {
+            await axios.delete(`https://bhutanwanderluxe.onrender.com/api/v1/reviews/${reviewId}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
 

@@ -19,7 +19,7 @@ const TourReviews = ({ tour }) => {
                 }
 
                 const { data } = await axios.get(
-                    `http://localhost:5000/api/v1/reviews/tour/${tourId}`,
+                    `https://bhutanwanderluxe.onrender.com/api/v1/reviews/tour/${tourId}`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,

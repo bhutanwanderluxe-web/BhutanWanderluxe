@@ -18,7 +18,7 @@ const SingleTour = ({ tour, onDelete }) => {
                 },
             };
 
-            await axios.delete(`http://localhost:5000/api/v1/tours/${id}`, config);
+            await axios.delete(`https://bhutanwanderluxe.onrender.com/api/v1/tours/${id}`, config);
             onDelete(id);
         } catch (error) {
             console.error(error);

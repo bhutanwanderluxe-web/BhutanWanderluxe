@@ -58,7 +58,7 @@ const AdminDashboard = () => {
                     },
                 };
                 const { data } = await axios.get(
-                    "http://localhost:5000/api/v1/users/natour-stats",
+                    "https://bhutanwanderluxe.onrender.com/api/v1/users/natour-stats",
                     config
                 );
 

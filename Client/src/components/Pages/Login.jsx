@@ -17,7 +17,7 @@ const Login = () => {
 
         try {
             const { data } = await axios.post(
-                "http://localhost:5000/api/v1/users/login",
+                "https://bhutanwanderluxe.onrender.com/api/v1/users/login",
                 { email, password },
                 { headers: { "Content-Type": "application/json" } }
             );
@@ -45,7 +45,7 @@ const Login = () => {
             console.log("Decoded Google User:", decoded);
 
             const { data } = await axios.post(
-                "http://localhost:5000/api/v1/users/google-login",
+                "https://bhutanwanderluxe.onrender.com/api/v1/users/google-login",
                 {
                     email: decoded.email,
                     name: decoded.name,

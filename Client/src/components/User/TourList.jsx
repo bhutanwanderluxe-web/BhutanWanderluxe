@@ -34,7 +34,7 @@ const TourList = () => {
         setBookingLoading(true);
         try {
             await axios.post(
-                "http://localhost:5000/api/v1/bookings/",
+                "https://bhutanwanderluxe.onrender.com/api/v1/bookings/",
                 {
                     tour: selectedTour._id,
                     user: user._id,

@@ -12,7 +12,7 @@ const PopularTours = () => {
     useEffect(() => {
         const fetchTours = async () => {
             try {
-                const res = await axios.get("http://localhost:5000/api/v1/tours/top-5-cheap");
+                const res = await axios.get("https://bhutanwanderluxe.onrender.com/api/v1/tours/top-5-cheap");
                 const sorted = res.data.doc?.sort((a, b) => b.ratingsAverage - a.ratingsAverage);
                 const top3 = sorted.slice(0, 3);
                 setTours(top3);
@@ -33,7 +33,7 @@ const PopularTours = () => {
 
         try {
             const response = await axios.post(
-                "http://localhost:5000/api/v1/bookings/",
+                "https://bhutanwanderluxe.onrender.com/api/v1/bookings/",
                 { tour: tourId, user: user._id, price },
                 {
                     headers: {

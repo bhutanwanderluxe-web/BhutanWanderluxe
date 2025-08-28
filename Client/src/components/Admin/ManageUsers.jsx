@@ -28,7 +28,7 @@ const ManageUsers = () => {
                 return;
             }
 
-            let url = "http://localhost:5000/api/v1/users";
+            let url = "https://bhutanwanderluxe.onrender.com/api/v1/users";
             if (filter === "active") url += "?active=true";
             else if (filter === "inactive") url += "?active=false";
 
@@ -56,7 +56,7 @@ const ManageUsers = () => {
             setLoadingStates((prev) => ({ ...prev, [userId]: true }));
 
             await axios.patch(
-                `http://localhost:5000/api/v1/users/${userId}/disable`,
+                `https://bhutanwanderluxe.onrender.com/api/v1/users/${userId}/disable`,
                 { active: !isActive },
                 {
                     headers: {

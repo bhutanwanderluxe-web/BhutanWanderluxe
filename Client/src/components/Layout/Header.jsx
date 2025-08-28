@@ -16,7 +16,7 @@ const Header = () => {
     const handleSearch = async () => {
         try {
             const { data } = await axios.get(
-                `http://localhost:5000/api/v1/tours/search/${search}`
+                `https://bhutanwanderluxe.onrender.com/api/v1/tours/search/${search}`
             );
 
             if (data) {

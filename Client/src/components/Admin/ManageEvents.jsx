@@ -24,7 +24,7 @@ const ManageEvents = () => {
     const fetchEvents = async () => {
         setLoading(true);
         try {
-            const { data } = await axios.get("http://localhost:5000/api/v1/events");
+            const { data } = await axios.get("https://bhutanwanderluxe.onrender.com/api/v1/events");
             setEvents(data.data || data.doc || []);
         } catch (err) {
             toast.error(err.response?.data?.message || "Failed to load events");
@@ -46,7 +46,7 @@ const ManageEvents = () => {
     const confirmDelete = async () => {
         setDeleting(true);
         try {
-            await axios.delete(`http://localhost:5000/api/v1/events/${deleteId}`, {
+            await axios.delete(`https://bhutanwanderluxe.onrender.com/api/v1/events/${deleteId}`, {
                 headers: { Authorization: `Bearer ${token}` },
             });
             toast.success("Event deleted!");

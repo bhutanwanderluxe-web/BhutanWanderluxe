@@ -20,7 +20,7 @@ const TourSection = () => {
             };
 
             const { data } = await axios.get(
-                "http://localhost:5000/api/v1/bookings/my-bookings",
+                "https://bhutanwanderluxe.onrender.com/api/v1/bookings/my-bookings",
                 config
             );
 

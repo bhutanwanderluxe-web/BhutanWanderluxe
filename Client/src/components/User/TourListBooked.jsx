@@ -22,7 +22,7 @@ const TourListBooked = ({ bookings }) => {
 
                     try {
                         const res = await axios.get(
-                            `http://localhost:5000/api/v1/tours/${tourId}`
+                            `https://bhutanwanderluxe.onrender.com/api/v1/tours/${tourId}`
                         );
                         return { ...booking, tour: res.data.data };
                     } catch (err) {
